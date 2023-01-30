@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vải Đức Viên</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Search Link  -->
+    <script src="dist/process/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="dist/style/header.css"></link>
+    <link rel="stylesheet" href="dist/style/index.css"></link>
+    <script src="dist/process/search.js"></script>
+    <script src="dist/process/adapter.js"></script>
+    <script src="dist/process/category_anim.js"></script>
+    <script src="dist/process/index.js"></script>
+</head>
+
+<body>
+     <!-- Nav bar-->
+  <div class="d-flex 
+     justify-content-between
+     py-2 px-2 " >
+    <div class="d-none d-xl-block" style="margin-left:30px"><img src="/dist/files/icons/logo.png" width="80" alt="" srcset=""></div>
+    <div>
+      
+      <input placeholder="Tìm kiếm sản phẩm" type="text" class="search"/>
+      <i class="fas fa-search" ></i>
+     </div>
+     <div class="d-flex px-1">
+         <a class="px-1" id="btn_vn" href="/" style="border: none;background-color: transparent;"><img src="dist/files/icons/vietnam.png" alt="" width="24px"></a>
+         <a class="px-1" id="btn_en" href="/" style="border: none;background-color: transparent;"><img src="dist/files/icons/united-kingdom.png" alt="" width="24px"></a>
+         <a class="px-1" id="btn_zh"  style="border: none;background-color: transparent;"><img src="dist/files/icons/china.png" alt="" width="24px"></a>
+     </div>
+     
+     
+   </div>
+   <nav class="navbar navbar-expand-lg" style="background-color:#F8F8F8;">
+     <div class="container-fluid">
+      <a id="btn_img_home" class="navbar-brand" href="/">
+         <!-- <img src="files/icons/logo.png" alt="" srcset="" height="60px"> -->
+       </a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 13px;">
+           <li class="nav-item">
+             <a class="nav-link active" id="tabbar_home" aria-current="page"  href="/">TRANG CHỦ</a>
+           </li>
+           <li class="nav-item" >
+             <a class="nav-link active" id="tabbar_about" aria-current="page" href="/about">GIỚI THIỆU</a>
+           </li>
+           <li class="nav-item dropdown" style="border: none;border-radius: 0%;">
+             <a class="nav-link dropdown-toggle" id="tabbar_product" style="color: #000000;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 SẢN PHẨM
+             </a>
+             <ul class="dropdown-menu" id="dropdown">
+               <li><a class="dropdown-item" href="./product/1">Vải Kaki thun</a></li>   
+               <li><a class="dropdown-item" href="./product/2">Vải Voan</a></li> 
+               <li><a class="dropdown-item" href="./product/3">Vải xốp</a></li> 
+               <li><a class="dropdown-item" href="./product/4">Vải tổ ong</a></li> 
+               <li><a class="dropdown-item" href="./product/5">Vải kaki nhungs</a></li> 
+               <li><a class="dropdown-item" href="./product/6">Vải thun 4 chiều</a></li> 
+               <li><a class="dropdown-item" href="./product/7">Vải xi</a></li> 
+               <li><a class="dropdown-item" href="./product/8">Vải linen</a></li> 
+               <li><a class="dropdown-item" href="./product/9">Vải 100D</a></li>         
+             </ul>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link active" id="tabbar_contact"  aria-current="page" href="/contact">LIÊN HỆ</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link active" id="tabbar_news" aria-current="page" href="/news">TIN TỨC</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link active" id="tabbar_recruitment" aria-current="page" href="/recruitment">TUYỂN DỤNG</a>
+           </li>
+         
+         </ul>
+         <div class="d-flex">
+            <span class="mx-1" style="font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 18px;">
+                Hotline:
+                </span>
+            <span id="hotline-top" style="font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 18px;">
+                (090) 186 7148 - (093) 885 3022
+                </span>
+         
+         </div>
+         
+       </div>
+     </div>
+   </nav>
+   <!----------------------------------------------------------------------------------------------------------->
+    <div class="root">
+      <div id="banner" class="banner pb-4 owl-carousel owl-theme">
+      
+      </div>
+        <div class="title py-4 px-2" style="text-align: center;">
+          <h1 style="font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 30px;">
+            DANH SÁCH <span id="category_count">0</span> LOẠI VẢI NỔI BẬT
+          </h1>
+          <h5 style="font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;">
+            Sản phẩm đáp ứng đầy đủ nhu cầu lựa chọn cho khách hàng
+          </h5>
+        </div>
+        <div id="category" class="category pb-4 owl-carousel owl-theme">
+          <!-- <div class="item px-4" style="width: 100%;">
+            <h2 style="font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 30px;text-align: center;">
+            Vải Cotton
+            </h2>
+            <div style="width: 100%;height: 1px;background-color: #000000;" class="my-2"></div>
+      
+            <img src="dist/files/images/vai.png" height="250px" width="100%" style="object-fit: cover;border-radius: 0px 0px 40px 40px;">
+          </div> -->
+        </div>
+        <div class="title py-4 px-2" style="text-align: center;">
+          <h1 style="font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 30px;">
+           SẢN PHẨM MỚI
+          </h1>
+          <h5 style="font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;">
+            Sản phẩm đáp ứng đầy đủ nhu cầu lựa chọn cho khách hàng
+          </h5>
+        </div>
+        <div id="product-list" class="product pb-4 row" style="width: 100%;margin: 0;" >
+          <!-- <div class="col-lg-3 col-md-4 col-6" >
+            <div class="item py-2" style="width: 100%;">
+              
+              <div style="width: 62px;height: 1px;background-color: #000000;" class="my-2"></div>
+              <h2 style="font-style: normal;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 22px;
+              letter-spacing: 0.1em;">
+              Áo Thun Nam Đen
+              </h2>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="/dist/files/images/mau.png" height="100%" width="100%" style="object-fit: cover;">
+                  </div>
+                    <div class="flip-card-back" style="height: 300px;">
+                      <div style="width: 100%;height: 100%; 
+                      background-image: url('/dist/files/images/mau.png');
+                      background-repeat: no-repeat;
+                      background-attachment: fixed;
+                      background-size: cover;">
+                        <div style="width: 100%;height: 100%; background-color: rgba(255, 255, 255, 0.61);">
+                          <h1>John Doe</h1> 
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+          </div> -->
+          <!-- <div class="col-lg-3 col-md-4 col-6">
+            <div class="item py-2" style="width: 100%;">
+              
+              <div style="width: 62px;height: 1px;background-color: #000000;" class="my-2"></div>
+              <h2 style="font-style: normal;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 22px;
+              letter-spacing: 0.1em;">
+              Áo Thun Nam Đen
+              </h2>
+              <img src="dist/files/images/mau.png" width="100%" style="object-fit: cover;">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <div class="item py-2" style="width: 100%;">
+              
+              <div style="width: 62px;height: 1px;background-color: #000000;" class="my-2"></div>
+              <h2 style="font-style: normal;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 22px;
+              letter-spacing: 0.1em;">
+              Áo Thun Nam Đen
+              </h2>
+              <img src="dist/files/images/mau.png" width="100%" style="object-fit: cover;">
+            </div>
+          </div> -->
+
+        </div>
+        <div class="mb-4" style="text-align: center;">
+          <button id="btn_seemore" type="button" class="btn btn-link">Xem thêm sản phẩm</button>
+        </div>
+        <div class="about" style="background-image: url('dist/files/icons/background_about.jpg');width: 100%;  background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;">
+            <div class="row px-4" style="background-color: rgba(0, 0, 0, 0.75);width: 100%;height: 100%;display: flex;
+            margin: 0;
+            padding: 70px 0;
+            align-items: center;
+            flex-wrap: wrap;">
+            <div class="col-lg-5 col-md-12" style="text-align: center;">
+              <img  src="dist/files/icons/company.jpg" width="100%" alt="" srcset="">
+            </div>
+                
+                <div class="col-lg-7 col-md-12 pt-2" style="text-align: center;">
+                  <h1 style="font-style: normal;
+                  font-weight: 700;
+                  font-size: 18px;
+                  line-height: 30px;
+                  color: #FFFFFF;">
+                   GIỚI THIỆU VỀ CHÚNG TÔI
+                  </h1>
+                  <h5 id="about-text" style="font-style: normal;
+                  font-weight: 500;
+                  font-size: 12px;
+                  line-height: 40px;
+                  text-align: justify;
+                  color: #FFFFFF;">
+                    Li liang là thương hiệu sợi vải bền vững đầu tiên của Việt Nam cung cấp giải pháp về nguồn nguyên liệu bền vững. Li liang chuyên nghiên cứu, tìm nguồn, và phân phối sợi vải thân thiện với môi trường. Sợi vải của Li liang bao gồm các loại sợi có nguồn gốc tự nhiên (như cây bông cotton, cây tre, bột gỗ,…) hay sợi tái chế (như vật liệu hậu tiêu dùng hoặc tiền tiều dùng). Các loại sợi chúng tôi ưu tiên chọn phân phối được sản xuất với dây chuyền hiện đại, chú trọng việc giảm rác thải và hạn chế dấu chân sinh học lên môi trường. Sứ mệnh của Li liang là trở thành một “trợ thủ đắc lực”, một đối tác đáng tin cậy giúp các doanh nghiệp dệt may Việt Nam phát triển một cách bền vững hơn. Từ đó, Li liang mong có thể đồng hành cùng các doanh nghiệp chung tay bảo vệ môi trường và bảo vệ sức khoẻ của người tiêu dùng tốt hơn.
+
+                  </h5>
+                </div>
+            </div>
+        </div>
+        <div class="title py-4 px-4" >
+          <h1 style="font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 30px;
+          color: #000000;">
+            TIN TỨC THỜI TRANG
+          </h1>
+          <h5 style="font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;">
+            Các tin tức về thời trang được cập nhật thường xuyên
+          </h5>
+        </div>
+        <div id="news" class="category pb-4 owl-carousel owl-theme">
+          <div class="item mx-4">
+            <div class="card" style="border-radius: 0;">
+                <img class="card-img-top pb-2"  src="dist/files/images/1.png" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"  
+                  style="font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 40px;
+                    color: #276C9D;">Tin Tức || Đức Viên</p>
+                  <a href="./news/1da312dasd21" class="card-title" style="font-style: normal;
+                      font-weight: 700;
+                      font-size: 18px;
+                      line-height: 40px;
+                      text-decoration:none;
+                      color: #000;">STYLE GUIDE | CÁC QUÝ ÔNG SẼ DIỆN ĐỒ GÌ KHI THỜI TIẾT XUỐNG 14°C ?</a>
+                  <p class="card-text" style="font-style: normal;
+                      font-weight: 500;
+                      font-size: 14px;
+                      line-height: 30px;
+                      text-align: justify;">14 độ. Mùa đông sang là lúc những i da,... lên ngôi. 14 độ. Mùa đông sang là lúc những i da,... lên ngôi 14 độ. Mùa đông sang là lúc những i da,... lên ngôi</p>
+                  <div class="d-flex justify-content-end">
+                      <p class="card-text" style="font-style: normal;
+                      font-weight: 300;
+                      font-size: 14px;
+                      line-height: 40px;
+                      color: #000000A4;">05/12/2022</p>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div class="item mx-4">
+          <div class="card" style="border-radius: 0;">
+              <img class="card-img-top pb-2"  src="dist/files/images/1.png" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"  
+                style="font-style: normal;
+                  font-weight: 700;
+                  font-size: 14px;
+                  line-height: 40px;
+                  color: #276C9D;">Tin Tức || Đức Viên</p>
+                <a href="./news/1da312dasd21" class="card-title" style="font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 40px;
+                    text-decoration:none;
+                    color: #000;">STYLE GUIDE | CÁC QUÝ ÔNG SẼ DIỆN ĐỒ GÌ KHI THỜI TIẾT XUỐNG 14°C ?</a>
+                <p class="card-text" style="font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 30px;
+                    text-align: justify;">14 độ. Mùa đông sang là lúc những i da,... lên ngôi. 14 độ. Mùa đông sang là lúc những i da,... lên ngôi 14 độ. Mùa đông sang là lúc những i da,... lên ngôi</p>
+                <div class="d-flex justify-content-end">
+                    <p class="card-text" style="font-style: normal;
+                    font-weight: 300;
+                    font-size: 14px;
+                    line-height: 40px;
+                    color: #000000A4;">05/12/2022</p>
+                </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="title py-4 px-4" >
+          <h1 style="font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 30px;
+          color: #000000;">
+            ĐÁNH GIÁ KHÁCH HÀNG
+          </h1>
+          <h5 style="font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;">
+            Bình luận của khách hàng cho sản phẩm của chúng tôi
+          </h5>
+        </div>
+        <div id="review" class="category pb-4 owl-carousel owl-theme" style="padding: 0 12%;">
+          <div class="item mx-4">
+            <div class="card" style="border: none;border-radius: 0;">
+                <img class="card-img-top"  src="dist/files/images/327079636_596041799013858_7879812067557695312_n.jpg" alt="Card image cap">
+                <div class="card-body" style="text-align: center;">
+                    <a class="card-title" style="font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 40px;
+                        text-decoration:none;
+                        color: #000;">Bảo Hân</a>
+                    <p class="card-text" style="font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 30px;
+                        text-align: justify;">Vải rất ưng ý, tôi rất thích vải ở đây. Tôi sẽ thường xuyên ghé thăm cửa hàng</p>  
+            </div>
+          </div>
+        </div>
+        <div class="item mx-4">
+          <div class="card" style="border: none;border-radius: 0;">
+              <img class="card-img-top"  src="dist/files/images/248416358_1576842266001904_7835742704852867752_n.jpg" alt="Card image cap">
+              <div class="card-body" style="text-align: center;">
+                  <a class="card-title" style="font-style: normal;
+                      font-weight: 700;
+                      font-size: 18px;
+                      line-height: 40px;
+                      text-decoration:none;
+                      color: #000;">Ý Thiên</a>
+                  <p class="card-text" style="font-style: normal;
+                      font-weight: 500;
+                      font-size: 14px;
+                      line-height: 30px;
+                      text-align: justify;">Vải rất ưng ý, tôi rất thích vải ở đây. Tôi sẽ thường xuyên ghé thăm cửa hàng</p>  
+          </div>
+        </div>
+      </div>
+      <div class="item mx-4">
+        <div class="card" style="border: none;border-radius: 0;">
+            <img class="card-img-top"  src="dist/files/images/315732923_3360970367517290_8491258900072150214_n.jpg" alt="Card image cap">
+            <div class="card-body" style="text-align: center;">
+                <a class="card-title" style="font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 40px;
+                    text-decoration:none;
+                    color: #000;">Hồng Ý</a>
+                <p class="card-text" style="font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 30px;
+                    text-align: justify;">Vải rất ưng ý, tôi rất thích vải ở đây. Tôi sẽ thường xuyên ghé thăm cửa hàng</p>  
+        </div>
+      </div>
+    </div>
+        </div>
+
+    </div>
+    <!-- <div class="hotline-phone-ring-wrap">
+      <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle"> <a id="hotline" href="tel:0397782783" class="pps-btn-img"> <img
+              src="/dist/files/icons/images-removebg-preview.png" alt="so dien thoai" width="50"> </a>
+        </div>
+  
+      </div>
+      <div class="zalo-ring">
+        <div class="zalo-ring-circle"></div>
+        <div class="zalo-ring-circle-fill"></div>
+        <div class="zalo-ring-img-circle"> <a id="facebook" href="/" class="pps-btn-img"> <img
+              src="/dist/files/icons/fb.png" alt="so dien thoai" width="50"> </a>
+        </div>
+  
+      </div>
+      <div class="zalo-ring">
+        <div class="zalo-ring-circle"></div>
+        <div class="zalo-ring-circle-fill"></div>
+        <div class="zalo-ring-img-circle"> <a id="zalo" href="/" class="pps-btn-img"> <img
+              src="/dist/files/icons/zalo.png" alt="so dien thoai" width="50"> </a>
+        </div>
+  
+      </div>
+    </div> -->
+    
+    
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-light text-muted">
+          <!-- Section: Social media -->
+        
+          <!-- Section: Links  -->
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold mb-4" id="name_company_1">
+                    <i class="fas fa-gem" ></i>VẢI ĐỨC VIÊN
+                  </h6>
+                  <p >
+                     <span id="gpkd">4118008503</span>
+                  </p>
+                  <p>
+                    <span id="date_range">02/12/2020</span> 
+                  </p>
+                  <p>
+                    <span id="address_range">Thành Phố Hồ Chí Minh</span>  
+                  </p>
+                  <p>
+                  <span id="address">Số 8 Phạm Phú Thứ, Phường 11, Quận Tân Bình, Thành Phố Hồ Chí Minh</span>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4" id="footer_title_info">
+                    Thông tin liên hệ
+                  </h6>
+                  <p>
+                    <a href="/contact" class="text-reset">Form liên hệ</a>
+                  </p>
+                  <p>
+                    <span id="hotline_bottom">(012) 234 245 - (012) 234 245 - (012) 234 245</span>
+                  </p>
+                 
+                  <p>
+                  <span id="time_open">08:00 - 18:00</span>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4" id="footer_info">
+                    Thông tin
+                  </h6>
+                  <p>
+                    <a href="/" id="footer_home" class="text-reset">Trang chủ</a>
+                  </p>
+                  <p>
+                    <a href="/about" id="footer_about" class="text-reset">Giới thiệu</a>
+                  </p>
+    
+                  <p>
+                    <a href="/news" id="footer_news" class="text-reset">Tin tức</a>
+                  </p>
+                  <p>
+                    <a href="/recuitment" id="footer_recruitment" class="text-reset">Tuyển dụng</a>
+                  </p>
+                  <p>
+                    <a href="/contact" id="footer_contact" class="text-reset">Liên hệ</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4" id="name_company_2">VẢI ĐỨC VIÊN</h6>
+                 
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+          <!-- Section: Links  -->
+        
+          <!-- Copyright -->
+          <!-- <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022 Copyright:
+            <a class="text-reset fw-bold" href="https://www.facebook.com/profile.php?id=100011342660106">Bá Nguyễn</a>
+          </div> -->
+          <!-- Copyright -->
+        </footer>
+  <!-- Footer -->
+      <!-- JavaScript Bundle with Popper -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+  crossorigin="anonymous"></script>
+  
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</body>
+
+<!-- <script src="./script/swiper.js"></script> -->
+</html>
