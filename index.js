@@ -45,7 +45,7 @@ app.get('/recruitment/:id', (req, res) => {
 
 const site = require('./controller')
 app.use(`/client`, site);
-require("../utils/mongoose");
+require("./utils/mongoose");
 
 app.listen(port, () => {
   console.log(`Admin LILIANG run ${port}`)
