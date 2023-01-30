@@ -1,0 +1,339 @@
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  
+.contact-container {
+  padding: 0 50px;
+  background: #FFFFFF;
+}
+
+.contact-container h2 {
+  text-align: center;
+  padding: 56px 0;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+
+.contact-container img {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+
+.label-contact {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.contact-input {
+  background: rgb(244, 242, 242);
+  border-radius: 8px;
+  width: 90%;
+  padding: 14px 14px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 40px;
+  /* identical to box height, or 250% */
+  color: #FFFFFF;
+  background: #273773;
+  border-radius: 8px;
+  padding: 10px 45px;
+  border: none;
+}
+
+    
+    .btn-contact {
+    cursor: pointer;
+    animation-name: shaking;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    }
+    @keyframes shaking {
+    
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+    
+    40%,
+    60% {
+        transform: translate3d(2px, 0, 0);
+    }
+    }
+
+
+    .hotline-phone-ring-wrap {
+        position: fixed !important;
+        bottom: 50px;
+        right: 0;
+        z-index: 1111111;
+      }
+      
+      .hotline-phone-ring {
+        position: relative;
+        visibility: visible;
+        background-color: transparent;
+        width: 110px;
+        height: 86px;
+        cursor: pointer;
+        z-index: 11;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0);
+        transition: visibility .1s;
+        left: 0;
+        bottom: 0;
+        display: block;
+      }
+      
+      .zalo-ring-circle {
+        width: 85px;
+        height: 85px;
+        top: 7px;
+        left: 11px;
+        position: absolute;
+        background-color: transparent;
+        border-radius: 100%;
+        border: 2px solid #2196f3;
+        -webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+        animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+        transition: all .5s;
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        opacity: .5
+      }
+      
+      .zalo-ring-circle-fill {
+        width: 55px;
+        height: 55px;
+        top: 22px;
+        left: 26px;
+        position: absolute;
+        background-color: #2196f3;
+        border-radius: 100%;
+        border: 2px solid transparent;
+        -webkit-animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+        animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+        transition: all .5s;
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%
+      }
+      
+      .zalo-ring-img-circle {
+        background-color: #2196f3;
+        width: 33px;
+        height: 33px;
+        top: 33px;
+        left: 38px;
+        position: absolute;
+        background-size: 20px;
+        border-radius: 100%;
+        border: 2px solid transparent;
+        -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+        animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+      
+.search-bar{
+    width: 80%;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+}
+
+
+
+.title-pst h1 {
+    padding: 20px 0;
+    padding-bottom: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+    /* or 133% */
+
+
+    color: #000000;
+}
+
+.title-pst span {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 40px;
+    /* identical to box height, or 222% */
+
+
+    color: #000000;
+}
+
+.title-pst img {
+    /* max-width: 100%;
+    height: auto; */
+    width: 60%;
+}
+
+.title-pst p {
+    width: 80%;
+    padding: 20px 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+    /* or 222% */
+
+    text-align: justify;
+
+    color: #000000;
+
+}
+
+.tin-tuc-khac {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    /* identical to box height */
+    color: #000000;
+    padding: 25px 0;
+}
+
+
+
+.item-news {
+    width: 100%
+}
+
+.item-news img {
+    max-width: 400px;
+    height: auto;
+}
+
+.item-news span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    /* or 286% */
+
+
+    color: #276C9D;
+
+}
+
+.item-news h1 {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 40px;
+    /* or 222% */
+    width: 361px;
+
+    color: #000000;
+}
+
+.item-news p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 40px;
+    /* or 286% */
+
+    text-align: justify;
+    width: 356px;
+    color: #000000;
+}
+
+.date-news {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 40px;
+    /* identical to box height, or 286% */
+    max-width: 400px;
+    text-align: right;
+
+    color: #000000 !important;
+
+}

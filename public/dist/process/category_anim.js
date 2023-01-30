@@ -1,0 +1,69 @@
+$(document).ready(function(){
+    $('#news').owlCarousel({
+        navigation : true,
+        loop:true,
+        margin:10,
+        nav:true,
+        autoplay:true,
+        dots:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            900:{
+                items:3
+            },
+            1200:{
+                items:3
+            }
+        }
+    })
+    $('#review').owlCarousel({
+        navigation : true,
+        loop:true,
+        margin:10,
+        nav:true,
+        autoplay:true,
+        dots:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1100:{
+                items:3
+            }
+        }
+    })
+    
+    $('#product').owlCarousel({
+        navigation : true,
+        loop:true,
+        margin:10,
+        nav:true,
+        autoplay:true,
+        dots:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            900:{
+                items:5
+            }
+        }
+    })
+})
