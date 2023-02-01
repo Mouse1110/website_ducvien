@@ -10,6 +10,33 @@ $(function() {
         results.forEach(element => {
             $('#dropdown-nav').append(`<li><a class="dropdown-item" href="/product?c=${element._id}&${params}">${element.name}</a></li>`)
         });
+
+
+    $('#btn_en').click(function(){
+        if (!getSearchParams("l")){
+            window.location = window.location +"?l=en"
+        } else {
+          let index =  window.location.search('?l=');
+          if (index >-1){
+            window.location[index+3] = "e"
+            window.location[index+4] = "n"
+            window.location = window.location
+          }
+        }
+    })
+
+    $('#btn_vn').click(function(){
+        if (!getSearchParams("l")){
+            window.location = window.location
+        } else {
+          let index =  window.location.search('?l=');
+          if (index >-1){
+            window.location[index+3] = "v"
+            window.location[index+4] = "n"
+            window.location = window.location
+          }
+        }
+    })
     
    
    document.getElementById("tabbar_home").innerHTML = getSearchParams("l")=="en"?"HOME":"TRANG CHỦ"
