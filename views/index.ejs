@@ -10,18 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Search Link  -->
-    <script src="dist/process/jquery.js"></script>
+    <script src="/dist/process/jquery.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="dist/style/header.css"></link>
-    <link rel="stylesheet" href="dist/style/index.css"></link>
-    <script src="dist/process/search.js"></script>
-    <script src="dist/process/adapter.js"></script>
-    <script src="dist/process/category_anim.js"></script>
-    <script src="dist/process/index.js"></script>
+    <link rel="stylesheet" href="/dist/style/header.css"></link>
+    <link rel="stylesheet" href="/dist/style/index.css"></link>
+    <script src="/dist/process/search.js"></script>
+    <script src="/dist/process/adapter.js"></script>
+    <script src="/dist/process/category_anim.js"></script>
+    <script src="/dist/process/index.js"></script>
+    <script src="/dist/process/dropdown.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,6 @@
      py-2 px-2 " >
     <div class="d-none d-xl-block" style="margin-left:30px"><img src="/dist/files/icons/logo.png" width="80" alt="" srcset=""></div>
     <div>
-      
       <input placeholder="Tìm kiếm sản phẩm" type="text" class="search"/>
       <i class="fas fa-search" ></i>
      </div>
@@ -63,16 +63,8 @@
              <a class="nav-link dropdown-toggle" id="tabbar_product" style="color: #000000;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                  SẢN PHẨM
              </a>
-             <ul class="dropdown-menu" id="dropdown">
-               <li><a class="dropdown-item" href="./product/1">Vải Kaki thun</a></li>   
-               <li><a class="dropdown-item" href="./product/2">Vải Voan</a></li> 
-               <li><a class="dropdown-item" href="./product/3">Vải xốp</a></li> 
-               <li><a class="dropdown-item" href="./product/4">Vải tổ ong</a></li> 
-               <li><a class="dropdown-item" href="./product/5">Vải kaki nhungs</a></li> 
-               <li><a class="dropdown-item" href="./product/6">Vải thun 4 chiều</a></li> 
-               <li><a class="dropdown-item" href="./product/7">Vải xi</a></li> 
-               <li><a class="dropdown-item" href="./product/8">Vải linen</a></li> 
-               <li><a class="dropdown-item" href="./product/9">Vải 100D</a></li>         
+             <ul class="dropdown-menu" id="dropdown-nav">
+               
              </ul>
            </li>
            <li class="nav-item">
@@ -97,7 +89,7 @@
                 font-weight: 700;
                 font-size: 12px;
                 line-height: 18px;">
-                (090) 186 7148 - (093) 885 3022
+                (000) 000 0000 - (000) 000 0000
                 </span>
          
          </div>
@@ -249,7 +241,7 @@
                 </div>
             </div>
         </div>
-        <div class="title py-4 px-4" >
+        <div class="title py-4 px-4"style="text-align:center" >
           <h1 style="font-style: normal;
           font-weight: 700;
           font-size: 18px;
@@ -296,39 +288,9 @@
             </div>
           </div>
         </div>
-        <div class="item mx-4">
-          <div class="card" style="border-radius: 0;">
-              <img class="card-img-top pb-2"  src="dist/files/images/1.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text"  
-                style="font-style: normal;
-                  font-weight: 700;
-                  font-size: 14px;
-                  line-height: 40px;
-                  color: #276C9D;">Tin Tức || Đức Viên</p>
-                <a href="./news/1da312dasd21" class="card-title" style="font-style: normal;
-                    font-weight: 700;
-                    font-size: 18px;
-                    line-height: 40px;
-                    text-decoration:none;
-                    color: #000;">STYLE GUIDE | CÁC QUÝ ÔNG SẼ DIỆN ĐỒ GÌ KHI THỜI TIẾT XUỐNG 14°C ?</a>
-                <p class="card-text" style="font-style: normal;
-                    font-weight: 500;
-                    font-size: 14px;
-                    line-height: 30px;
-                    text-align: justify;">14 độ. Mùa đông sang là lúc những i da,... lên ngôi. 14 độ. Mùa đông sang là lúc những i da,... lên ngôi 14 độ. Mùa đông sang là lúc những i da,... lên ngôi</p>
-                <div class="d-flex justify-content-end">
-                    <p class="card-text" style="font-style: normal;
-                    font-weight: 300;
-                    font-size: 14px;
-                    line-height: 40px;
-                    color: #000000A4;">05/12/2022</p>
-                </div>
-          </div>
+        
         </div>
-      </div>
-        </div>
-        <div class="title py-4 px-4" >
+        <div class="title py-4 px-4" style="text-align: center;">
           <h1 style="font-style: normal;
           font-weight: 700;
           font-size: 18px;
@@ -346,7 +308,7 @@
         <div id="review" class="category pb-4 owl-carousel owl-theme" style="padding: 0 12%;">
           <div class="item mx-4">
             <div class="card" style="border: none;border-radius: 0;">
-                <img class="card-img-top"  src="dist/files/images/327079636_596041799013858_7879812067557695312_n.jpg" alt="Card image cap">
+                <img class="card-img-top" width="300px" height="300px"  src="dist/files/images/327079636_596041799013858_7879812067557695312_n.jpg" style="object-fit: cover;" alt="Card image cap">
                 <div class="card-body" style="text-align: center;">
                     <a class="card-title" style="font-style: normal;
                         font-weight: 700;
@@ -364,7 +326,7 @@
         </div>
         <div class="item mx-4">
           <div class="card" style="border: none;border-radius: 0;">
-              <img class="card-img-top"  src="dist/files/images/248416358_1576842266001904_7835742704852867752_n.jpg" alt="Card image cap">
+              <img class="card-img-top" width="300px" height="300px"  style="object-fit: cover;" src="dist/files/images/248416358_1576842266001904_7835742704852867752_n.jpg" alt="Card image cap">
               <div class="card-body" style="text-align: center;">
                   <a class="card-title" style="font-style: normal;
                       font-weight: 700;
@@ -382,13 +344,14 @@
       </div>
       <div class="item mx-4">
         <div class="card" style="border: none;border-radius: 0;">
-            <img class="card-img-top"  src="dist/files/images/315732923_3360970367517290_8491258900072150214_n.jpg" alt="Card image cap">
+            <img class="card-img-top" style="object-fit: cover;"  src="dist/files/images/315732923_3360970367517290_8491258900072150214_n.jpg" width="300px" height="300px" alt="Card image cap">
             <div class="card-body" style="text-align: center;">
                 <a class="card-title" style="font-style: normal;
                     font-weight: 700;
                     font-size: 18px;
                     line-height: 40px;
                     text-decoration:none;
+                    
                     color: #000;">Hồng Ý</a>
                 <p class="card-text" style="font-style: normal;
                     font-weight: 500;
@@ -400,6 +363,33 @@
     </div>
         </div>
 
+    </div>
+
+    <div class="hotline-phone-ring-wrap">
+      <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle"> <a id="hotline" href="tel:000" class="pps-btn-img"> <img
+              src="/dist/files/icons/images-removebg-preview.png" alt="so dien thoai" width="50"> </a>
+        </div>
+  
+      </div>
+      <div class="zalo-ring">
+        <div class="zalo-ring-circle"></div>
+        <div class="zalo-ring-circle-fill"></div>
+        <div class="zalo-ring-img-circle"> <a id="facebook" href="/" class="pps-btn-img"> <img
+              src="/dist/files/icons/facebook.png" alt="so dien thoai" width="50"> </a>
+        </div>
+  
+      </div>
+      <div class="zalo-ring">
+        <div class="zalo-ring-circle"></div>
+        <div class="zalo-ring-circle-fill"></div>
+        <div class="zalo-ring-img-circle"> <a id="zalo" href="/" class="pps-btn-img"> <img
+              src="/dist/files/icons/zalo.png" alt="so dien thoai" width="50"> </a>
+        </div>
+  
+      </div>
     </div>
     <!-- <div class="hotline-phone-ring-wrap">
       <div class="hotline-phone-ring">

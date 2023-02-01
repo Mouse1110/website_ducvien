@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 5001
+
 var cors = require("cors")
 app.use(express.static('public'))
 app.use(cors())
@@ -11,11 +12,11 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/product/:id', (req, res) => {
+app.get('/product', (req, res) => {
   res.render('product-list')
 })
 
-app.get('/product/:id/data/:product', (req, res) => {
+app.get('/product/index', (req, res) => {
   res.render('product')
 })
 
