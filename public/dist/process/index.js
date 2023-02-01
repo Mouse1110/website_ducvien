@@ -1,12 +1,6 @@
 $(function() {
-    // $( "td" ).hover(
-    //     function() {
-    //       $( this ).addClass( "hover" );
-    //     }, function() {
-    //       $( this ).removeClass( "hover" );
-    //     }
-    //   );
-    $.get(`${document.location.origin}/client/banner`,function(results){
+  let sub = getSearchParams("l") == "en" ? "l=en" : "l=vn"
+    $.get(`${document.location.origin}/client/banner?l=${sub}`,function(results){
         console.log(results)
         results.forEach(element => {
             $('#banner').append(`<div class="item" style="width: 100%;">
@@ -26,12 +20,9 @@ $(function() {
                 }
             }
         })
-
-       
     })
-    $.get(`${document.location.origin}/client/category`,function(results){
+    $.get(`${document.location.origin}/client/category?${sub}`,function(results){
         console.log(results)
-       document.getElementById('category_count').innerHTML = results.length
         results.forEach(element => {
           console.log(element._id)
           let item = $(`<div class="item px-4" style="width: 100%;">
@@ -39,12 +30,12 @@ $(function() {
           font-weight: 700;
           font-size: 16px;
           line-height: 30px;text-align: center;">
-          ${element.name}
+            ${element.name}
           </h2>
           <div style="width: 100%;height: 1px;background-color: #000000;" class="my-2"></div>
           <img src="${element.image}" height="250px" width="100%" style="object-fit: cover;border-radius: 0px 0px 40px 40px;">
         </div>`).on("click",function(){
-           window.location = `/product?c=${element._id}`
+           window.location = `/product?c=${element._id}&${sub}`
         })
             $('#category').append(item)
         })
@@ -79,13 +70,12 @@ $(function() {
     let list = []
     let seemore = false
 
-    $.get(`${document.location.origin}/client/product`,function(results){
+    $.get(`${document.location.origin}/client/product?${sub}`,function(results){
         console.log(results)
         list = results
         results.forEach((element,index) => {
-          let item = $(`<div class="col-lg-3 col-md-4 ${(index+1)%3==0?"":"col-6"}" >
+          let item = $(`<div class="col-lg-3 col-md-4}" >
           <div class="item py-2" style="width: 100%;">
-    
           <div style="width: 62px;height: 1px;background-color: #000000;" class="my-2"></div>
           <h2 style="font-style: normal;
           font-weight: 700;
@@ -104,7 +94,7 @@ $(function() {
                   background-image: url(' ${element.image_fabric}');
                   background-repeat: no-repeat;
                   background-attachment: fixed;
-                  background-size: cover;
+                  background-size: contain;
                   ">
                     <div style="width: 100%;height: 100%; background-color: rgba(255, 255, 255, 0.61);padding:70px 0;">
                       <a href="/product/index?c=${element.id_fabric}&p=${element._id}" style ="font-style: normal;
@@ -125,9 +115,16 @@ $(function() {
         });
     })
 
-    $.get(`${document.location.origin}/client/profile`,function(result){
+    $.get(`${document.location.origin}/client/profile?${sub}`,function(result){
 
         document.getElementById('about-text').innerHTML = result.content
     })
     
 });
+
+
+function getSearchParams(k){
+  var p={};
+  location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+  return k?p[k]:p;
+ }

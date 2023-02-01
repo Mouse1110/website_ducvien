@@ -1,7 +1,8 @@
 $(function() {
+    let sub = getSearchParams("l") == "en" ? "l=en" : "l=vn"
     let categoru_params = getSearchParams('c')
     let product_params = getSearchParams('p')
-    $.get(`${document.location.origin}/client/product`,function(results){
+    $.get(`${document.location.origin}/client/product?${sub}`,function(results){
         console.log(results)
         list = results
         results.forEach((element,index) => {
@@ -18,7 +19,7 @@ $(function() {
             <img src="${element.image_fabric}" height="300px" width="100%" style="object-fit: cover;">
           </div>`).find('div').on("click", function()
           {
-              window.location = `/product/index?c=${categoru_params}&p=${element._id}`
+              window.location = `/product/index?c=${categoru_params}&p=${element._id}&${sub}`
           }).end();
            }
         });
@@ -44,7 +45,7 @@ $(function() {
         })
     })
     if (product_params){
-        $.get(`${document.location.origin}/client/product/${product_params}`,function(result){
+        $.get(`${document.location.origin}/client/product/${product_params}?${sub}`,function(result){
             console.log(result)
             let anh1 = $(`<img src="${result.image_fabric}" height="120px" width="120px" style="object-fit: cover;">`)
             let anh2 = $(`<img src="${result.image_sample}" height="120px" width="120px" style="object-fit: cover;">`)

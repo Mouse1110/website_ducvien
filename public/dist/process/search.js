@@ -4,6 +4,7 @@ function handleSelect(elm)
    window.location = `/${elm.value}`;
 }
 $(document).ready(function() {
+    let sub = getSearchParams("l") == "en" ? "l=en" : "l=vn"
     let arr = []
     $.get(`${document.location.origin}/client/category`,function(results){
         console.log(results)
@@ -32,7 +33,7 @@ $(document).ready(function() {
            if ($('#search').val().length>0){
             let index = $.inArray($('#search').val().toLowerCase(), arr.map(e=>e.name.toLowerCase()))
             if (index>-1){
-            window.location = `/product?c=${arr[index]._id}`
+            window.location = `/product?c=${arr[index]._id}&${sub}`
             } else window.location = `/product`
            }
         }
@@ -40,7 +41,7 @@ $(document).ready(function() {
     $('#btn_search').click(function(){
         let index = $.inArray($('#search').val().toLowerCase(), arr.map(e=>e.name.toLowerCase()))
         if (index>-1){
-            window.location = `/product?c=${arr[index]._id}`
+            window.location = `/product?c=${arr[index]._id}&${sub}`
         } else window.location = `/product`
     })
 });
@@ -50,3 +51,10 @@ function arrayContains(needle, arrhaystack)
 {
     return (arrhaystack.indexOf(needle) > -1);
 }
+
+function getSearchParams(k){
+    var p={};
+    location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+    return k?p[k]:p;
+   }
+

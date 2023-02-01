@@ -1,7 +1,7 @@
 $(function() {
     let categoru_params = getSearchParams('c')
-
-    $.get(`${document.location.origin}/client/category`,function(results){
+    let sub = getSearchParams("l") == "en" ? "l=en" : "l=vn"
+    $.get(`${document.location.origin}/client/category?${sub}`,function(results){
         console.log(results)
         results.forEach(element => {
             if (categoru_params==element._id){
@@ -16,7 +16,7 @@ $(function() {
             document.getElementById('title-category').innerHTML = element.name
             } else 
             $('#category').append(`<div class="px-2">
-            <a href="/product?c=${element._id}" style="font-style: normal;
+            <a href="/product?c=${element._id}&${sub}" style="font-style: normal;
             font-weight: 700;
             font-size: 14px;
             color: #637281;
@@ -26,14 +26,14 @@ $(function() {
         });
     })
 
-    $.get(`${document.location.origin}/client/product`,function(results){
+    $.get(`${document.location.origin}/client/product?${sub}`,function(results){
         console.log(results)
         list = results
         results.forEach((element,index) => {
             let item = $(`<div class="col-lg-4 col-md-4 col-6" >
             <div class="item py-2" style="width: 100%;">
               <img src=" ${element.image_fabric}" width="100%" height="300px" style="object-fit: cover;">
-              <a href="/product/index?c=${categoru_params}&p=${element._id}" class="mt-4" style="font-style: normal;
+              <a href="/product/index?c=${categoru_params}&p=${element._id}&${sub}" class="mt-4" style="font-style: normal;
               font-weight: 700;
               font-size: 14px;
               line-height: 22px;
@@ -45,7 +45,7 @@ $(function() {
             </div>
           </div>`).find('div').on("click", function()
           {
-              window.location = `/product/index?c=${categoru_params}&p=${element._id}`
+              window.location = `/product/index?c=${categoru_params}&p=${element._id}&${sub}`
           }).end();
             if (!categoru_params){
               
