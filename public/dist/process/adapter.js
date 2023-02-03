@@ -5,38 +5,26 @@ $(function() {
     } else if (getSearchParams("l")=="en"){
         params = "?l=en"
     }
+    $('#btn_en').click(function(){
+        
+        window.location = "/?l=en"
+    })
+
+    $('#btn_vn').click(function(){
+        window.location = "/?l=vn"
+    })
     $.get(`${document.location.origin}/client/category${params}`,function(results){
         console.log(results)
         results.forEach(element => {
             $('#dropdown-nav').append(`<li><a class="dropdown-item" href="/product?c=${element._id}&${params}">${element.name}</a></li>`)
         });
 
+        
+        $('#btn_home').click(function(){
+            window.location = "/"+params
+        })
 
-    $('#btn_en').click(function(){
-        if (!getSearchParams("l")){
-            window.location = window.location +"?l=en"
-        } else {
-          let index =  window.location.search('?l=');
-          if (index >-1){
-            window.location[index+3] = "e"
-            window.location[index+4] = "n"
-            window.location = window.location
-          }
-        }
-    })
-
-    $('#btn_vn').click(function(){
-        if (!getSearchParams("l")){
-            window.location = window.location
-        } else {
-          let index =  window.location.search('?l=');
-          if (index >-1){
-            window.location[index+3] = "v"
-            window.location[index+4] = "n"
-            window.location = window.location
-          }
-        }
-    })
+    
     
    
    document.getElementById("tabbar_home").innerHTML = getSearchParams("l")=="en"?"HOME":"TRANG CHỦ"
@@ -56,15 +44,14 @@ $(function() {
         document.getElementById("title_product").innerHTML =  getSearchParams("l")=="en"?`NEW PRODUCT`:`SẢN PHẨM MỚI`
         document.getElementById("hint_product").innerHTML = getSearchParams("l")=="en"?`Products that fully meet the needs of customers`:`Sản phẩm đáp ứng đầy đủ nhu cầu lựa chọn cho khách hàng`
         document.getElementById("title_about").innerHTML =  getSearchParams("l")=="en"?`ABOUT US`:`GIỚI THIỆU VỀ CHÚNG TÔI`
-        document.getElementById("title_news").innerHTML =  getSearchParams("l")=="en"?`FASHION NEWS`:`TIN TỨC THỜI TRANG`
-        document.getElementById("hint_news").innerHTML = getSearchParams("l")=="en"?`Fashion news is updated regularly`:`Các tin tức về thời trang được cập nhật thường xuyên`
+        document.getElementById("title_news").innerHTML =  getSearchParams("l")=="en"?`FABRIC AND FASHION NEWS`:`TIN TỨC VỀ VẢI VÀ THỜI TRANG`
         document.getElementById("title_review").innerHTML =  getSearchParams("l")=="en"?`CUSTOMER REVIEW`:`ĐÁNH GIÁ KHÁCH HÀNG`
         document.getElementById("hint_review").innerHTML = getSearchParams("l")=="en"?`Customer comments for our products`:`Bình luận của khách hàng cho sản phẩm của chúng tôi`
     }else 
     if (document.getElementById("page_title_about")){
     document.getElementById("page_title_about").innerHTML = getSearchParams("l")=="en"? data.profile.en:data.profile.vn
     } else if (document.getElementById("page_title_contact")){
-        document.getElementById("page_title_contact").innerHTML = getSearchParams("l")=="en"? data.contact.en:data.contact.vn
+        document.getElementById("page_title_contact").innerHTML = getSearchParams("l")=="en"? "Contact Us":"Liên Hệ Với Chúng Tôi"
     } else if (document.getElementById("page_title_news")){
         document.getElementById("page_title_news").innerHTML = getSearchParams("l")=="en"? data.news.en:data.news.vn
     }else if (document.getElementById("page_title_recruitment")){

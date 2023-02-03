@@ -581,3 +581,43 @@
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5); 
 }
+
+
+.recruit-btn {
+  padding: 10px 0;
+  background: #276C9D;
+  border-radius: 8px;
+  width: 80%;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 40px;
+  border: none;
+  color: #FFFFFF;
+
+}
+
+.recruit-contact {
+  padding: 44px 0;
+}
+
+.recruit-info {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  /* or 167% */
+
+
+  color: #000000;
+}
+
+.recruit-info-des {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 40px;
+  /* or 222% */
+
+  text-align: justify;
+
+  color: #000000;
+}

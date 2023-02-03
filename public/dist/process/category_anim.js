@@ -3,6 +3,55 @@ $(document).ready(function(){
         navigation : true,
         margin:10,
         nav:true,
+        loop:true,
+        autoplay:true,
+        dots:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            900:{
+                items:3
+            },
+            1200:{
+                items:3
+            }
+        }
+    })
+    $('#show').owlCarousel({
+        navigation : true,
+        margin:10,
+        nav:true,
+        loop:true,
+        autoplay:true,
+        dots:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            900:{
+                items:3
+            },
+            1200:{
+                items:3
+            }
+        }
+    })
+    $('#list').owlCarousel({
+        navigation : true,
+        margin:10,
+        nav:true,
+        loop:true,
         autoplay:true,
         dots:true,
         autoplayTimeout:3000,
