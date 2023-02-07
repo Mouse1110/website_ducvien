@@ -3,8 +3,10 @@ mongooseIntl = require('mongoose-intl'),
 Schema       = mongoose.Schema;
 
 var schema = new Schema({
-    s3Key: String,
+    key: String,
     bucket: String,
+    mime: String,
+    comment: String | null,
 });
 
 schema.plugin(mongooseIntl, { languages: ['vn', 'en', 'zh'], defaultLanguage: 'vn' });

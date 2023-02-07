@@ -7,9 +7,9 @@ var schema = new Schema({
     image_sample: String,
     name_fabric:{ type: String, intl: true },
     image_fabric: String,
-    content  : { type: String, intl: true },
     id_fabric: String,
-    createdAt: { type: Date, default: Date.now },
+    s3Key : String,
+    bucket: String,
 });
 
 schema.plugin(mongooseIntl, { languages: ['vn', 'en', 'zh'], defaultLanguage: 'vn' });

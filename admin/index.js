@@ -1,53 +1,52 @@
-const AdminJS = require('adminjs')
-const AdminJSExpress = require('@adminjs/express')
-const AdminJSMongoose = require('@adminjs/mongoose')
 const express = require('express')
-const Connect = require('connect-pg-simple')
-const session = require('express-session')
-const mongoose = require('mongoose')
-const Category = require('../models/category')
-const Product = require('../models/product')
-const Profile = require('../models/profile')
-const New = require('../models/news')
-const Recruitment = require('../models/recruitment')
-const PORT = 5002
+const app = express()
+const port = 5002
+app.use(express.static('public'))
+app.set('view engine','ejs');
+app.set("views","./admin/views");
+var cors = require('cors')
+app.use(express.static('public'))
+const path = require('path')
+app.use(cors())
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const uploadFeature = require('@adminjs/upload')
-
-const DEFAULT_ADMIN = {
-  email: 'admin@example.com',
-  password: 'password',
-}
-
-AdminJS.registerAdapter({
-  Resource: AdminJSMongoose.Resource,
-  Database: AdminJSMongoose.Database,
+app.get('/', (req, res) => {
+  res.render('index')
 })
 
-const authenticate = async (email, password) => {
-  if (email === DEFAULT_ADMIN.email && password === DEFAULT_ADMIN.password) {
-    return Promise.resolve(DEFAULT_ADMIN)
-  }
-  return null
-}
-
-
-const start = async () => {
-  const app = express()
-  mongoose.set("strictQuery", false);
-  await mongoose.connect('mongodb+srv://liliang:le2MS6U1NF434cSd@cluster0.a4dtz.mongodb.net/vaiducvien?retryWrites=true&w=majority')
-  const adminOptions = {
-    // We pass Category to `resources`
-    resources: [Product,Profile,New,Recruitment],
-  }
-
-  const admin = new AdminJS(adminOptions)
-  const adminRouter = AdminJSExpress.buildRouter(admin)
-  app.use(admin.options.rootPath, adminRouter)
-
-  app.listen(PORT, () => {
-    console.log(`AdminJS started on http://localhost:${PORT}${admin.options.rootPath}`)
+app.get('/news', (req, res) => {
+    res.render('news')
   })
-}
 
-start()
+  app.get('/profile', (req, res) => {
+    res.render('profile')
+  })
+
+  app.get('/recuitment', (req, res) => {
+    res.render('recuitment')
+  })
+
+app.listen(port, () => {
+  console.log(`Admin Vai Duc Vien run ${port}`)
+})
+
+// const product = require('./router/product/product_router')
+// app.use(`/category`, product);
+
+const news = require('./router/news/new_router')
+app.use(`/router/news`, news);
+
+// const profile = require('./router/profile/profile_router')
+// app.use(`/profile`, profile);
+
+// const banner = require('./router/banner/banner_router')
+// app.use(`/banner`, banner);
+
+// const recuitment = require('./router/recuitment/recuitment_router')
+// app.use(`/recuitment`, recuitment);
+
+const mongoose = require("../utils/mongoose");
+
