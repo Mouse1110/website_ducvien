@@ -24,7 +24,7 @@ app.get('/news', (req, res) => {
   res.render('news-list')
 })
 
-app.get('/news/:id', (req, res) => {
+app.get('/news/index', (req, res) => {
   res.render('news')
 })
 

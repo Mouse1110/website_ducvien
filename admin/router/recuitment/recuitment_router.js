@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
+const middleware = require("./middle")
 
-const middleware = require("./recuitment_middle")
 const upload = require("../../../utils/multer")
+router.get("/",middleware.get_item)
+router.post("/",upload.single('image'),middleware.post_item)
+router.post("/put",upload.single('image'),middleware.put_item)
+router.delete("/:id",middleware.delete_item)
 
-router.get("/data",middleware.all_recui_get)
-router.post("/",upload.single('image'),middleware.recui_post)
-router.delete("/:id",middleware.recrui_delete)
 module.exports = router

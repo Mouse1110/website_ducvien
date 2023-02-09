@@ -42,48 +42,95 @@ router.get("/banner",async (req,res)=>{
     res.json(['/dist/files/icons/banner-01.png','/dist/files/icons/banner-02.png','/dist/files/icons/banner-03.png','/dist/files/icons/banner-04.png','/dist/files/icons/banner-05.png'])
 })
 
+const CategoryModel = require('./models/category')
+const ProductModel = require('./models/product')
+const NewsModel = require('./models/news')
+const RecruitmentModel = require('./models/recruitment')
+const ProfileModel = require('./models/profile')
+
 router.get("/category",async (req,res)=>{
+    let datas =await CategoryModel.find({})
+    let results = []
+    for (let i = datas.length -1 ;i>=0;i--){
+        results.push(datas[i])
+    }
     if (req.query.l == "" || req.query.l == "vn"){
-       return res.json(category)
+       return res.json(results.map(e=>({_id:e._id,name:e.get('name.vn'),image:e.image})))
     } 
-   return res.json(category_en)
+    res.json(results.map(e=>({_id:e._id,name:e.get('name.en'),image:e.image})))
 })
 
 
 router.get("/product",async (req,res)=>{
+    let datas =await ProductModel.find({})
+    let results = []
+    for (let i = datas.length -1 ;i>=0;i--){
+        results.push(datas[i])
+    }
     if (req.query.l == "" || req.query.l == "vn"){
-        return res.json(product)
-     } 
-    return res.json(product_en)
+       return res.json(results.map(e=>({_id:e._id,
+        name_fabric:e.get('name_fabric.vn'),
+       image_fabric:"/"+e.image_fabric,
+       name_sample:e.get('name_sample.vn'),
+       image_sample:"/"+e.image_sample,
+       id_fabric:e.id_fabric,})))
+    } 
+    res.json(results.map(e=>({_id:e._id,
+        name_fabric:e.get('name_fabric.en'),
+       image_fabric:"/"+e.image_fabric,
+       name_sample:e.get('name_sample.en'),
+       image_sample:"/"+e.image_sample,
+       id_fabric:e.id_fabric,})))
 })
 
+
 router.get("/product/:id",async (req,res)=>{
+    let e = await ProductModel.findOne({_id:req.params.id})
+    console.log(e)
     if (req.query.l == "" || req.query.l == "vn"){
-        let item = product.find(e=>e._id==req.params.id); 
-        return res.json(item)
+        return res.json({_id:e._id,
+            name_fabric:e.get('name_fabric.vn'),
+           image_fabric:"/"+e.image_fabric,
+           name_sample:e.get('name_sample.vn'),
+           image_sample:"/"+e.image_sample,
+           id_fabric:e.id_fabric,})
      } 
-     let item = product_en.find(e=>e._id==req.params.id); 
-     res.json(item)
+     res.json({_id:e._id,
+        name_fabric:e.get('name_fabric.en'),
+       image_fabric:"/"+e.image_fabric,
+       name_sample:e.get('name_sample.en'),
+       image_sample:"/"+e.image_sample,
+       id_fabric:e.id_fabric,})
 })
 
 router.get("/profile",async (req,res)=>{
+    let e = await ProfileModel.findOne({})
     if (req.query.l == "" || req.query.l == "vn"){
-        return res.json({"content":`Công ty TNHH Dệt may Đức Viên được thành lập vào năm 2008. Công ty có trụ sở chính tại tỉnh Chiết Giang, Trung Quốc, tập trung vào phát triển và kinh doanh hàng dệt may. Sản phẩm của công ty chủ yếu được bán ở Trung Quốc, Việt Nam, Trung Đông, Nam Phi, Hoa Kỳ, Đông Nam Á và các nước khác. Kể từ khi thành lập, công ty đã thiết lập mối quan hệ hợp tác lâu dài và ổn định với nhiều thương hiệu thời trang Trung Quốc.Với chất lượng sản phẩm tuyệt vời, giá cả hợp lý và dịch vụ hoàn hảo, nhanh chóng, công ty đã giành được sự tin tưởng của khách hàng trong và ngoài nước, hoạt động kinh doanh xuất khẩu của công ty đã phát triển liên tục.
-
-        Công ty chúng tôi luôn coi chất lượng sản phẩm là sự sống của công ty, từ khi thành lập đến nay đã rất chú trọng đến tiêu chuẩn chất lượng, yêu cầu khắt khe về công nghệ sản xuất, phấn đấu đi trước các công ty khác một bước trong việc phát triển sản phẩm mới, hình thành nên những đặc điểm, lợi thế của công ty.
-        
-        Các loại vải chính của công ty bao gồm: dệt thoi, dệt kim, sơ mi, áo gió, voan, nhung, quần tây, vest công sở, in, jacquard, nhuộm sợi, denim, thun ni lông, kaki cotton, v.v., với đầy đủ chủng loại.
-        
-        Công ty đã tuân thủ triết lý kinh doanh "khách hàng là trên hết, dịch vụ tốt nhất" từ đầu đến cuối và hoan nghênh khách hàng đến công ty chúng tôi để đàm phán! Như mọi khi, chúng tôi sẽ cải thiện các tiêu chuẩn dịch vụ của mình bằng các hành động thiết thực và cùng nhau tạo ra một tình huống đôi bên cùng có lợi!.`})
+        return res.json({_id:e._id,
+            content:e.get('content.vn')})
      } 
-    res.json({"content":`Deyuan Textile Co., Ltd. was established in 2008. The company is headquartered in Zhejiang province, China, focusing on developing and trading textiles. The company's products are mainly sold in China, Vietnam, the Middle East, South Africa, the United States, Southeast Asia and other countries. Since its establishment, the company has established long-term and stable cooperative relationship with many Chinese fashion brands. With excellent product quality, reasonable price and perfect, prompt service , the company has won the trust of domestic and foreign customers, the company's export business has developed continuously.
-
-    Our company always considers product quality as the life of the company, since its establishment, it has paid great attention to quality standards, strict requirements on production technology, strive to be one step ahead of other companies in developing new products, forming the characteristics and advantages of the company.
-    
-    The company's main fabrics include: woven, knitted, shirt, windbreaker, chiffon, velvet, trousers, work vest, printed, jacquard, yarn dyed, denim, nylon spandex, khaki cotton, etc. , with a full range.
-    
-    The company has been adhering to the "customer first, best service" business philosophy from beginning to end, and welcome customers to our company for negotiation! As always, we will improve our service standards with practical actions and create a win-win situation together!`})
+     res.json({_id:e._id,
+        content:e.get('content.en')})
 })
 
+router.get("/news",async (req,res)=>{
+    let datas =await NewsModel.find({})
+    let results = []
+    for (let i = datas.length -1 ;i>=0;i--){
+        results.push(datas[i])
+    }
+    if (req.query.l == "" || req.query.l == "vn"){
+       return res.json(results.map(e=>({_id:e._id,name:e.get('name.vn'),content:e.get('content.vn'),image:e.image})))
+    } 
+    res.json(results.map(e=>({_id:e._id,name:e.get('name.en'),content:e.get('content.en'),image:e.image})))
+})
+
+router.get("/news/:id",async (req,res)=>{
+    let e = await NewsModel.findOne({_id:req.params.id})
+    if (req.query.l == "" || req.query.l == "vn"){
+        return res.json({_id:e._id,name:e.get('name.vn'),content:e.get('content.vn'),image:e.image})
+     } 
+     res.json({_id:e._id,name:e.get('name.en'),content:e.get('content.en'),image:e.image})
+})
 
 module.exports = router

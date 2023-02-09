@@ -51,7 +51,7 @@ $(function() {
               
                 $('#product-list').append(item)
             } else {
-                if (element._id == categoru_params) {
+                if (element.id_fabric == categoru_params) {
                    
                     $('#product-list').append(item)
                 }

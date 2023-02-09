@@ -24,7 +24,7 @@ $(function() {
     $.get(`${document.location.origin}/client/category?${sub}`,function(results){
         console.log(results)
         results.forEach(element => {
-          console.log(element._id)
+          console.log(element.name)
           let item = $(`<div class="item px-4" style="width: 100%;">
           <h2 style="font-style: normal;
           font-weight: 700;
@@ -119,6 +119,63 @@ $(function() {
 
         document.getElementById('about-text').innerHTML = result.content
     })
+
+    $.get(`${document.location.origin}/client/news?${sub}`,function(results){
+      console.log(results)
+      results.forEach(element => {
+          let item = $(`<div class="item mx-4">
+          <div class="card" style="border-radius: 0;">
+              <img class="card-img-top pb-2"  src="dist/files/icons/company.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"  
+                style="font-style: normal;
+                  font-weight: 700;
+                  font-size: 14px;
+                  line-height: 40px;
+                  color: #276C9D;">Tin Tức || Đức Viên</p>
+                <a href="/news/index?id=${element._id}" class="card-title" style="font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 40px;
+                    text-decoration:none;
+                    color: #000;">${element.name}</a>
+                <p class="card-text" style="font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 30px;
+                    text-align: justify;">${element.content.substring(0,250)}</p>
+               
+          </div>
+        </div>
+        
+      </div>`)
+          $('#news').append(item);
+      });
+      $('#news').owlCarousel({
+        navigation : true,
+        margin:10,
+        nav:true,
+        loop:true,
+        autoplay:true,
+        dots:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            900:{
+                items:3
+            },
+            1200:{
+                items:3
+            }
+        }
+    })
+  })
     
 });
 

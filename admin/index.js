@@ -14,30 +14,76 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('category')
 })
 
-app.get('/news', (req, res) => {
-    res.render('news')
+app.get('/category/post', (req, res) => {
+  res.render('category-form')
+})
+
+app.get('/category/put', (req, res) => {
+  res.render('category-put')
+})
+
+app.get('/product', (req, res) => {
+    res.render('product')
   })
 
-  app.get('/profile', (req, res) => {
+  app.get('/product/post', (req, res) => {
+    res.render('product-form')
+  })
+
+  app.get('/product/put', (req, res) => {
+    res.render('product-put')
+  })
+
+
+  app.get('/about', (req, res) => {
     res.render('profile')
   })
 
-  app.get('/recuitment', (req, res) => {
-    res.render('recuitment')
+  app.get('/news', (req, res) => {
+    res.render('news')
+  })
+
+  app.get('/news/post', (req, res) => {
+    res.render('news-form')
+  })
+
+  app.get('/news/put', (req, res) => {
+    res.render('news-put')
+  })
+
+
+  app.get('/recruitment', (req, res) => {
+    res.render('recruitment')
+  })
+
+  app.get('/recruitment/post', (req, res) => {
+    res.render('recruitment-form')
+  })
+  app.get('/recruitment/put', (req, res) => {
+    res.render('recruitment-put')
   })
 
 app.listen(port, () => {
   console.log(`Admin Vai Duc Vien run ${port}`)
 })
 
-// const product = require('./router/product/product_router')
-// app.use(`/category`, product);
+const category = require('./router/category/category_router')
+app.use(`/router/category`, category);
+
+const product = require('./router/product/product_router')
+app.use(`/router/product`, product);
 
 const news = require('./router/news/new_router')
 app.use(`/router/news`, news);
+
+const recruitment = require('./router/recuitment/recuitment_router')
+app.use(`/router/recruitment`, recruitment);
+
+const profile = require('./router/profile/profile_router')
+app.use(`/router/profile`, profile);
 
 // const profile = require('./router/profile/profile_router')
 // app.use(`/profile`, profile);

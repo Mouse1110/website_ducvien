@@ -120,17 +120,20 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Danh mục sản phẩm</span></a></li>
+                            href="/" aria-expanded="false"><span
+                                class="hide-menu">Loại vải</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/profile" aria-expanded="false"><i
-                                    class="mdi mdi-account-network"></i><span class="hide-menu">Thông tin công ty</span></a></li>
+                            href="/product" aria-expanded="false"><span
+                                class="hide-menu">Sản phẩm</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/news" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
-                                    class="hide-menu">Tin Tức</span></a></li>
+                            href="/about" aria-expanded="false"><span
+                                class="hide-menu">Liên hệ</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/recruitment" aria-expanded="false"><i class="mdi mdi-face"></i><span
-                                    class="hide-menu">Tuyển Dụng</span></a></li>
+                            href="/news" aria-expanded="false"><span
+                                class="hide-menu">Tin tức</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="/recruitment" aria-expanded="false"><span
+                                class="hide-menu">Tuyển dụng</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -161,133 +164,15 @@
             <!-- danh mục sản phẩm  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                <div id="formCategory" class="row d-none">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-md-flex align-items-center">
-                                    <div>
-                                        <h4 class="card-title">Cập Nhật Danh Mục Sản Phẩm</h4>
-                                        <h6 class="card-subtitle">Cập nhật hoặc thêm danh mục sản phẩm</h6>
-                                    </div>
-                                </div>
-                                <br>
-                               <div class="col-12">
-                                <form id="formCategoryAdd" action="./category" method="post" role="form" enctype="multipart/form-data">                       
-                                    <div class="form-group">
-                                      <label  for="exampleInputEmail1">Tên danh mục (Việt Nam)*</label>
-                                      <input  name="name_vn" type="text" class="form-control" id="categoryNameVN" aria-describedby="emailHelp" value="" placeholder="VD: bộ sưu tập ...">
-                                    </div>
-                                    <div class="form-group">
-                                        <label  for="exampleInputEmail1">Tên danh mục (Tiếng Anh)*</label>
-                                        <input  name="name_en" type="text" class="form-control" id="categoryNameEN" aria-describedby="emailHelp" value="" placeholder="VD: bộ sưu tập ...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label  for="exampleInputEmail1">Tên danh mục (Trung Quốc)*</label>
-                                        <input  name="name_zh" type="text" class="form-control" id="categoryNameZH" aria-describedby="emailHelp" value="" placeholder="VD: bộ sưu tập ...">
-                                      </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Chọn hình ảnh đại diện vải</label>
-                                        <br>
-                                        <input name="image" type="file" class="form-control-file" id="categoryImageFabric">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Chọn hình ảnh sản phẩm 1</label>
-                                        <br>
-                                        <input name="image" type="file" class="form-control-file" id="categoryImageProduct1">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Chọn hình ảnh sản phẩm 2</label>
-                                        <br>
-                                        <input name="image" type="file" class="form-control-file" id="categoryImageProduct2">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Chọn hình ảnh sản phẩm 3</label>
-                                        <br>
-                                        <input name="image" type="file" class="form-control-file" id="categoryImageProduct3">
-                                    </div>
-                                    <div class="form-group">
-                                    <label for="exampleInputEmail1">Nội dung (Việt Nam)*</label>
-                                    <textarea name="content_vn" class="form-control" id="categoryContentVN" rows="5"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Nội dung (Tiếng Anh)*</label>
-                                        <textarea name="content_en" class="form-control" id="categoryContentEN" rows="5"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Nội dung (Trung Quốc)*</label>
-                                        <textarea name="content_zh" class="form-control" id="categoryContentZH" rows="5"></textarea>
-                                    </div>
-                                    <button id="btnSubmitCategory" type="submit" class="btn btn-primary">Thêm mới</button>
-                                  </form>
-                               </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- ============================================================== -->
-                <div id="formProduct" class="row d-none" >
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-md-flex align-items-center">
-                                    <div>
-                                        <h4 class="card-title">Cập nhật thông tin sản phẩm</h4>
-                                        <h6 class="card-subtitle">Cập nhật hoặc thêm sản phẩm mới</h6>
-                                    </div>
-                                </div>
-                                <br>
-                               <div class="col-12">
-                                <form id="formProductAdd" action="./category/product" method="post" role="form" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Tên sản phẩm (Việt Nam)*</label>
-                                      <input name="name_vn" type="text" class="form-control" id="productNameVN" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Tên sản phẩm (Tiếng Anh)*</label>
-                                        <input name="name_en" type="text" class="form-control" id="productNameEN" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="exampleInputEmail1">Tên sản phẩm (Trung Quốc)*</label>
-                                        <input name="name_zh" type="text" class="form-control" id="productNameZH" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
-                                      </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Mã sản phẩm *</label>
-                                        <input name="code" type="text" class="form-control" id="productCode" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
-                                      </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Chọn hình ảnh *</label>
-                                        <br>
-                                        <input name="image" type="file" class="form-control-file" id="productImage">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Nội dung (Việt Nam)*</label>
-                                        <textarea name="content_vn" class="form-control" id="productContentVN" rows="5"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Nội dung (Tiếng Anh)*</label>
-                                        <textarea name="content_en" class="form-control" id="productContentEN" rows="5"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Nội dung (Trung Quốc)*</label>
-                                        <textarea name="content_zh" class="form-control" id="productContentZH" rows="5"></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Thêm mới</button>
-                                  </form>
-                               </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <div id="products" class="row d-none">
+                <div id="products" class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-md-flex">
                                     <div>
-                                        <h4 class="card-title" id="titleProduct">BỘ SƯU TẬP VẢI KAKI</h4>
-                                        <h5 class="card-subtitle">Danh sách sản phẩm theo loại vải</h5>
+                                        <h5 class="card-title" id="titleProduct">Danh sách sản phẩm</h5>
                                     </div>
                                     <div class="ms-auto">
                                         <button id="btnAddFormProduct" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
@@ -299,167 +184,35 @@
                                     <table class="table mb-0 table-hover align-middle text-nowrap">
                                         <thead>
                                             <tr>
-                                                <th class="border-top-0">Hình ảnh</th>
-                                                <th class="border-top-0">Tên sản phẩm</th>
-                                                <th class="border-top-0">Mã sản phẩm</th>
-                                                <th class="border-top-0">Nội dung</th>
+                                                <th class="border-top-0">Hình ảnh vải</th>
+                                                <th class="border-top-0">Tên vải</th>
+                                                <th class="border-top-0">Hình ảnh mẫu</th>
+                                                <th class="border-top-0">Tên sản phẩm mẫu</th>
                                                 <th class="border-top-0"></th>
                                                 <th class="border-top-0"></th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tableProducts">
+                                        <tbody id="list">
                                             <tr>
                                                 <td>
                                                     Hiện chưa có sản phẩm nào trong danh mục này
                                                 </td>
                                             </tr>
                                             <!-- <tr>
+                                                <td>VẢI KAKI</td>
                                                 <td>
-                                                    <img src="./assets/images/anh.png" alt="..." class="img-thumbnail" width="80">
+                                                    <img src="/dist/files/images/1.png" alt="..." class="img-thumbnail" width="80">
                                                 </td>
                                                 <td>VẢI KAKI</td>
-                                                <td>T23AF</td>
-                                                <td>
-                                                    <span class="text-muted d-inline-block text-truncate" style="max-width: 15rem;">Trên thị trường có rất nhiều loại vải khác nhau, vải kaki rất thịnh hành trên thị trường và rất dễ gây nhầm lẫn cho người sử dụng. Vải kaki được phân loại thành 4 loại chính để phân biệt, bao gồm: vải kaki thun, vải kaki không thun, vải kaki polyester, vải kaki cotton.</span>
-                                                </td>
+                                                <td><img src="/dist/files/images/1.png" alt="..." class="img-thumbnail" width="80"></td>
+                                                <td>VẢI KAKI</td>
                                                 <td>
                                                     <button type="button" class="btn btn-outline-secondary">Chỉnh sửa</button>
                                                 </td>
-                                            </tr> -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <!-- title -->
-                                <div class="d-md-flex">
-                                    <div>
-                                        <h4 class="card-title">Danh Mục Sản Phẩm</h4>
-                                        <h5 class="card-subtitle">Các danh mục hiện tại đang có trong hệ thống</h5>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <button id="btnUpdate" type="button" class="btn btn-outline-secondary">
-                                            Cập nhật danh mục
-                                        </button>
-                                        <button id="btnAddCategory" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                            Thêm danh mục mới
-                                          </button>
-                                    </div>
-                                </div>
-                                <!-- title -->
-                                <div class="table-responsive">
-                                    <table id="category" class="table mb-0 table-hover align-middle text-nowrap">
-                                        <tbody>
-                                            <tr>
-                                                <td id="messCategory">
-                                                    Hiện chưa có danh mục nào
-                                                </td>
-                                            </tr>
-                                            <!-- <tr >
                                                 <td>
-                                                    
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="ms-3">
-                                                            <h5 class="mb-0 fw-bold">BỘ SƯU TẬP VẢI KAKI</h5>
-                                                            <span class="text-muted d-inline-block text-truncate" style="max-width: rem;">Trên thị trường có rất nhiều loại vải khác nhau, vải kaki rất thịnh hành trên thị trường và rất dễ gây nhầm lẫn cho người sử dụng. Vải kaki được phân loại thành 4 loại chính để phân biệt, bao gồm: vải kaki thun, vải kaki không thun, vải kaki polyester, vải kaki cotton.</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h5 class="m-b-0">10 sản phẩm</h5>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-outline-secondary">Xem sản phẩm</button>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-outline-secondary">Thêm sản phẩm mới</button>
+                                                    <button type="button" class="btn btn-outline-secondary">Xóa</button>
                                                 </td>
                                             </tr> -->
-                                        </tbody>
-                                    </table>
-                                  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <div id="formExample" class="row d-none" >
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-md-flex align-items-center">
-                                    <div>
-                                        <h4 class="card-title">Cập nhập sản phẩm mẫu</h4>
-                                        <h6 class="card-subtitle">Cập nhật hoặc thêm sản phẩm mẫu</h6>
-                                    </div>
-                                </div>
-                                <br>
-                               <div class="col-12">
-                                <form id="formExampleAdd" action="./category/example" method="post" role="form" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Tên sản phẩm (Việt Nam)*</label>
-                                      <input name="name_vn" type="text" class="form-control" id="exampleNameVN" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Tên sản phẩm (Tiếng Anh)*</label>
-                                        <input name="name_en" type="text" class="form-control" id="exampleNameEN" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="exampleInputEmail1">Tên sản phẩm (Trung Quốc)*</label>
-                                        <input name="name_zh" type="text" class="form-control" id="exampleNameZH" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
-                                      </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Chọn hình ảnh *</label>
-                                        <br>
-                                        <input name="image" type="file" class="form-control-file" id="exampleImage">
-                                    </div>
-                                   
-                                    <button type="submit" class="btn btn-primary">Thêm mới</button>
-                                  </form>
-                               </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <!-- ============================================================== -->
-                 <div id="example" class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-md-flex">
-                                    <div>
-                                        <h5 class="card-title" id="titleProduct">Danh mục sản phẩm</h5>
-                                        <h6 class="card-subtitle">Các sản phẩm mẫu trưng bày</h6>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <button  onclick="location.href='./?example=add';" id="btnAddFormProduct" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                            Thêm sản phẩm mới
-                                          </button>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table mb-0 table-hover align-middle text-nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th class="border-top-0">Hình ảnh</th>
-                                                <th class="border-top-0">Tên sản phẩm</th>
-                                                <th class="border-top-0"></th>
-                                               
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tableExample">
-                                          
-                                           
                                         </tbody>
                                     </table>
                                 </div>
@@ -471,10 +224,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center">
-                All Rights Reserved by LiLiang. Designed and Developed by <a
-                    href="https://www.facebook.com/profile.php?id=100011342660106">Bá Nguyễn</a>.
-            </footer>
+          
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -491,12 +241,11 @@
     <!-- ============================================================== -->
 
     <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js">
-       
     </script>
     <script src="/dist/admin/assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="/dist/admin/jquery/process-product.js"></script>
+    <script src="/dist/admin/jquery/product.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="/dist/admin/assets/libs/bootstrap/dist/css/bootstrap.bundle.min.js"></script>
+    <script src="/dist/admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/dist/admin/js/app-style-switcher.js"></script>
     <!--Wave Effects -->
     <script src="/dist/admin/js/waves.js"></script>
@@ -506,9 +255,9 @@
     <script src="/dist/admin/js/custom.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="/dist/admin/assets/libs/chartist/dist/chartist.min.js"></script>
+    <!-- <script src="/dist/admin/assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="/dist/admin/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="/dist/admin/dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="/dist/admin/dist/js/pages/dashboards/dashboard1.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script> 
 
 </body>

@@ -6,7 +6,7 @@ $(function() {
         console.log(results)
         list = results
         results.forEach((element,index) => {
-           if (element._id==categoru_params){
+           if (element.id_fabric==categoru_params){
             $('#product-list').append(`<div class="item py-2" style="width: 100%;">
             <div style="width: 62px;height: 1px;background-color: #000000;" class="my-2"></div>
             <h2 style="font-style: normal;

@@ -1,10 +1,9 @@
 const express = require('express')
 const router = express.Router()
+const middleware = require("./middle")
 
-const middleware = require("./profile_middle")
-
-router.get("/data",middleware.profile_get)
-router.post("/",middleware.profile_post)
-// router.delete("/:id",middleware.profile_delete)
+const upload = require("../../../utils/multer")
+router.get("/",middleware.get_item)
+router.post("/",middleware.put_item)
 
 module.exports = router
