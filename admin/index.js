@@ -3,7 +3,7 @@ const app = express()
 const port = 5002
 app.use(express.static('public'))
 app.set('view engine','ejs');
-app.set("views","./admin/views");
+app.set("views","../admin/views");
 var cors = require('cors')
 app.use(express.static('public'))
 const path = require('path')
