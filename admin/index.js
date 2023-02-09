@@ -5,7 +5,7 @@ app.use(express.static('public'))
 app.set('view engine','ejs');
 app.set("views","../admin/views");
 var cors = require('cors')
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('../public'));
 const path = require('path')
 app.use(cors())
 var bodyParser = require('body-parser');
