@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const port = 5002
 const path = require('path')
-app.use(express.static('../public'))
+app.use(express.static('./public'))
 app.set('view engine','ejs');
-app.set("views","../admin/views");
+app.set("views","./admin/views");
 
 var cors = require('cors')
 
@@ -71,19 +71,19 @@ app.listen(port, () => {
   console.log(`Admin Vai Duc Vien run ${port}`)
 })
 
-const category = require('./router/category/category_router')
+const category = require('./admin/router/category/category_router')
 app.use(`/router/category`, category);
 
-const product = require('./router/product/product_router')
+const product = require('./admin/router/product/product_router')
 app.use(`/router/product`, product);
 
-const news = require('./router/news/new_router')
+const news = require('./admin/router/news/new_router')
 app.use(`/router/news`, news);
 
-const recruitment = require('./router/recuitment/recuitment_router')
+const recruitment = require('./admin/router/recuitment/recuitment_router')
 app.use(`/router/recruitment`, recruitment);
 
-const profile = require('./router/profile/profile_router')
+const profile = require('./admin/router/profile/profile_router')
 app.use(`/router/profile`, profile);
 
 // const profile = require('./router/profile/profile_router')
@@ -95,5 +95,5 @@ app.use(`/router/profile`, profile);
 // const recuitment = require('./router/recuitment/recuitment_router')
 // app.use(`/recuitment`, recuitment);
 
-const mongoose = require("../utils/mongoose");
+const mongoose = require("./utils/mongoose");
 

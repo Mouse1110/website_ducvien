@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon client/index.js",
-    "admin": "nodemon admin/index.js"
+    "admin": "nodemon admin.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
