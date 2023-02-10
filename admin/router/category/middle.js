@@ -10,6 +10,7 @@ module.exports.get_item = async (req,res) => {
 }
 
 module.exports.post_item = async (req,res) => {
+    return res.redirect('http://localhost:5002/');
     var file = req.file;
     console.log(file)
     if (!file) return res.redirect('http://localhost:5002/');
