@@ -11,7 +11,8 @@ module.exports.get_item = async (req,res) => {
 
 module.exports.post_item = async (req,res) => {
     var file = req.file;
-    if (!file) return res.redirect('/');
+    console.log(file)
+    if (!file) return res.redirect('http://localhost:5002/');
     let data = new Model({
         name:{
             vn:req.body.name_vn,
@@ -21,7 +22,7 @@ module.exports.post_item = async (req,res) => {
         image:file.filename,
     })
     let result = await data.save()
-    res.redirect('/');
+    res.redirect('http://localhost:5002/');
 }
 
 module.exports.put_item = async (req,res) => {
