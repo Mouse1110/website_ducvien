@@ -133,4 +133,25 @@ router.get("/news/:id",async (req,res)=>{
      res.json({_id:e._id,name:e.get('name.en'),content:e.get('content.en'),image:e.image})
 })
 
+
+router.get("/recruitment",async (req,res)=>{
+    let datas =await RecruitmentModel.find({})
+    let results = []
+    for (let i = datas.length -1 ;i>=0;i--){
+        results.push(datas[i])
+    }
+    if (req.query.l == "" || req.query.l == "vn"){
+       return res.json(results.map(e=>({_id:e._id,name:e.get('name.vn'),content:e.get('content.vn'),image:e.image})))
+    } 
+    res.json(results.map(e=>({_id:e._id,name:e.get('name.en'),content:e.get('content.en'),image:e.image})))
+})
+
+router.get("/recruitment/:id",async (req,res)=>{
+    let e = await RecruitmentModel.findOne({_id:req.params.id})
+    if (req.query.l == "" || req.query.l == "vn"){
+        return res.json({_id:e._id,name:e.get('name.vn'),content:e.get('content.vn'),image:e.image})
+     } 
+     res.json({_id:e._id,name:e.get('name.en'),content:e.get('content.en'),image:e.image})
+})
+
 module.exports = router
