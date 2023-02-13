@@ -2,6 +2,7 @@
 $(document).ready(async function(){
   
     $.get(`/router/profile`,function(element){
+      $('#time_open').val(element.time_open)
         ClassicEditor
         .create( document.querySelector( '#content_vn' ) )
         .then( editor => {
