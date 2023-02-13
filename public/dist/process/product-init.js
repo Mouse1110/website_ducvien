@@ -49,8 +49,8 @@ $(function() {
             console.log(result)
             let anh1 = $(`<img src="${result.image_fabric}" height="120px" width="120px" style="object-fit: cover;">`)
             let anh2 = $(`<img src="${result.image_sample}" height="120px" width="120px" style="object-fit: cover;">`)
-            let anh_duoi1 = $(`<img  src="${result.image_fabric}" height="80px" width="80px" style="object-fit: cover;">`)
-            let anh_duoi2 = $(`<img  src="${result.image_sample}" height="80px" width="80px" style="object-fit: cover;">`)
+            let anh_duoi1 = $(`<img  src="${result.image_fabric}" height="200px"  style="object-fit: cover;width:100%">`)
+            let anh_duoi2 = $(`<img  src="${result.image_sample}" height="200px" style="object-fit: cover;width:100%">`)
 
             $('#anh1').html(anh1).find('img').on("click", function()
             {
