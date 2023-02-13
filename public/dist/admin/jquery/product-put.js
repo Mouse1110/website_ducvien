@@ -22,17 +22,17 @@ $(document).ready(async function(){
             ClassicEditor
           .create( document.querySelector( '#content_vn' ) )
           .then( editor => {
-            editor.setData(e.content.vn)
+            editor.setData(e.content.vn??"")
             } )
           ClassicEditor
           .create( document.querySelector( '#content_en' ) )
           .then( editor => {
-            editor.setData(e.content.en)
+            editor.setData(e.content.en??"")
             } )
           ClassicEditor
           .create( document.querySelector( '#content_zh' ) )
           .then( editor => {
-            editor.setData(e.content.zh)
+            editor.setData(e.content.zh??"")
             } )
           }
         });
