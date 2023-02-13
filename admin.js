@@ -26,6 +26,18 @@ app.get('/category/put', (req, res) => {
   res.render('category-put')
 })
 
+app.get('/banner', (req, res) => {
+  res.render('banner')
+})
+
+app.get('/banner/post', (req, res) => {
+  res.render('banner-form')
+})
+
+app.get('/banner/put', (req, res) => {
+  res.render('banner-put')
+})
+
 app.get('/product', (req, res) => {
     res.render('product')
   })
@@ -70,6 +82,8 @@ app.get('/product', (req, res) => {
 app.listen(port, () => {
   console.log(`Admin Vai Duc Vien run ${port}`)
 })
+const banner = require('./admin/router/banner/banner_router')
+app.use(`/router/banner`, banner);
 
 const category = require('./admin/router/category/category_router')
 app.use(`/router/category`, category);

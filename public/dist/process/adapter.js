@@ -62,7 +62,9 @@ $(function() {
         document.getElementById("page_hint_product").innerHTML = getSearchParams("l")=="en"? "RELATED PRODUCTS":"SẢN PHẨM LIÊN QUAN"
     }
     })
-    
+    $.get(`${document.location.origin}/client/profile`,function(result){
+        document.getElementById("time_open").innerHTML = result.time_open? result.time_open:""
+    })
 });
 
 

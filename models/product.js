@@ -8,6 +8,7 @@ var schema = new Schema({
     name_fabric:{ type: String, intl: true },
     image_fabric: String,
     id_fabric: String,
+    content:{ type: String, intl: true },
 });
 
 schema.plugin(mongooseIntl, { languages: ['vn', 'en', 'zh'], defaultLanguage: 'vn' });

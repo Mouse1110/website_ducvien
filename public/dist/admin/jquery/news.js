@@ -23,7 +23,7 @@ $(document).ready(async function(){
         })
           let example =  $(`<tr></tr>`).append(`<td>
           <img src="${e.image}" alt="..." class="img-thumbnail" width="80">
-      </td>`,` <td>${e.name.vn}</td>`,`<td>${e.content.en}</td>`,btn_update,btn_delete)
+      </td>`,` <td>${e.name.vn.substring(0,30)}</td>`,`<td>${e.content.vn?e.content.vn.substring(0,50):""}...</td>`,btn_update,btn_delete)
         example.appendTo($('#list'))
         })
 

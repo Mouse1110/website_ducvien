@@ -1,7 +1,9 @@
 
 $(document).ready(async function(){
+    $('#list').sortable();
     $.get(`/router/category`,function(results){
         console.log(results)
+        categorys = results
       if (results)  document.getElementById('list').innerHTML = ''
         results.forEach(e=>{
             let btn_update = $(`<td>
@@ -32,5 +34,22 @@ $(document).ready(async function(){
 
     $('#btnAddFormProduct').click(function(){
         window.location = '/category/post'
+    })
+    categorys = []
+    const btnUpdate = document.querySelector('#btnUpdate');
+    btnUpdate.addEventListener('click', function(e){
+        let list = []
+        let table = document.getElementById("category")
+        console.log(document.location.origin + "/" + categorys[0].image)
+        for (let i = 1;i<table.rows.length;i++){
+            var image = $(table.rows[i].cells[0].innerHTML)
+            
+           let data = categorys.find(e=>document.location.origin + "/" + e.image == image[0].src)
+            if (data) list.push(data)
+        }
+         $.post(`/router/category/sort`,{ids:list.map(e=>e._id)},function(result){
+            window.location = '/'
+        })
+       
     })
   });

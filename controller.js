@@ -38,22 +38,32 @@ const product_en = [{"_id":"1","id_fabric":"1","name_sample":"Men's Blazers","im
 {"_id":"7","id_fabric":"7","name_sample":"Men's jeans jacket","image_sample":"/dist/files/images/b7.jpg","name_fabric":"Xi Fabric","image_fabric":"/dist/files/images/a7.jpg"},
 ]
 
-router.get("/banner",async (req,res)=>{
-    res.json(['/dist/files/icons/banner-01.png','/dist/files/icons/banner-02.png','/dist/files/icons/banner-03.png','/dist/files/icons/banner-04.png','/dist/files/icons/banner-05.png'])
-})
+
 
 const CategoryModel = require('./models/category')
 const ProductModel = require('./models/product')
 const NewsModel = require('./models/news')
 const RecruitmentModel = require('./models/recruitment')
 const ProfileModel = require('./models/profile')
+const BannerModel = require('./models/banner')
+router.get("/banner",async (req,res)=>{
+    let results =await BannerModel.find({})
+    res.json(results.map(e=>e.image))
+})
 
 router.get("/category",async (req,res)=>{
     let datas =await CategoryModel.find({})
     let results = []
-    for (let i = datas.length -1 ;i>=0;i--){
-        results.push(datas[i])
+    for (let i = 0 ;i<datas.length -2;i++){
+        for (let j = i+1;j<datas.length -1;j++){
+            if (datas[i].index>datas[j].index){
+                let x = datas[i]
+                datas[i] = datas[j]
+                datas[j] = x
+            }
+        }
     }
+    results = datas
     if (req.query.l == "" || req.query.l == "vn"){
        return res.json(results.map(e=>({_id:e._id,name:e.get('name.vn'),image:e.image})))
     } 
@@ -107,10 +117,10 @@ router.get("/profile",async (req,res)=>{
     let e = await ProfileModel.findOne({})
     if (req.query.l == "" || req.query.l == "vn"){
         return res.json({_id:e._id,
-            content:e.get('content.vn')})
+            content:e.get('content.vn'),time_open:e.time_open})
      } 
      res.json({_id:e._id,
-        content:e.get('content.en')})
+        content:e.get('content.en'),time_open:e.time_open})
 })
 
 router.get("/news",async (req,res)=>{

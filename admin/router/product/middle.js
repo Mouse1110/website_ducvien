@@ -27,7 +27,12 @@ module.exports.post_item = async (req,res) => {
             zh:req.body.name_fabric_zh,
         },
         image_fabric:files[1].filename,
-        id_fabric:req.body.id_fabric
+        id_fabric:req.body.id_fabric,
+        content:{
+            vn:req.body.content_vn,
+            en:req.body.content_en,
+            zh:req.body.content_zh,
+        },
     })
     let result = await data.save()
     res.redirect('/product');
@@ -56,7 +61,12 @@ module.exports.put_item = async (req,res) => {
                     zh:req.body.name_fabric_zh,
                 },
                 image_fabric:files[1].filename,
-                id_fabric:req.body.id_fabric
+                id_fabric:req.body.id_fabric,
+                content:{
+                    vn:req.body.content_vn,
+                    en:req.body.content_en,
+                    zh:req.body.content_zh,
+                },
             })
         } else {
             data = new Model({
@@ -72,7 +82,12 @@ module.exports.put_item = async (req,res) => {
                     zh:req.body.name_fabric_zh,
                 },
                 image_fabric:news.image_fabric,
-                id_fabric:req.body.id_fabric
+                id_fabric:req.body.id_fabric,
+                content:{
+                    vn:req.body.content_vn,
+                    en:req.body.content_en,
+                    zh:req.body.content_zh,
+                },
             })
         }
 

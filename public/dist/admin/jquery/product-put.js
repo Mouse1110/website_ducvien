@@ -19,7 +19,21 @@ $(document).ready(async function(){
             $('#nameSampleVN').val(e.name_sample.vn);
             $('#nameSampleEN').val(e.name_sample.en);
             $('#nameSampleZH').val(e.name_sample.zh);
-            
+            ClassicEditor
+          .create( document.querySelector( '#content_vn' ) )
+          .then( editor => {
+            editor.setData(element.content.vn)
+            } )
+          ClassicEditor
+          .create( document.querySelector( '#content_en' ) )
+          .then( editor => {
+            editor.setData(element.content.en)
+            } )
+          ClassicEditor
+          .create( document.querySelector( '#content_zh' ) )
+          .then( editor => {
+            editor.setData(element.content.zh)
+            } )
           }
         });
         $.get(`/router/category`,function(results){

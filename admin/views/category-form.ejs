@@ -56,7 +56,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/">
                         <h4 class="card-title">ĐỨC VIÊN</h4>
                     </a>
                     <!-- ============================================================== -->
@@ -120,6 +120,9 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="/banner" aria-expanded="false"><span
+                                class="hide-menu">Banner</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                             href="/" aria-expanded="false"><span
                                 class="hide-menu">Loại vải</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -152,7 +155,7 @@
                     <div class="col-6">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0 d-flex align-items-center">
-                              <li class="breadcrumb-item"><a href="index.html" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
+                              <li class="breadcrumb-item"><a href="/" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
                               <li class="breadcrumb-item active" aria-current="page">Danh mục sản phẩm</li>
                             </ol>
                           </nav>
@@ -181,11 +184,11 @@
                                     <div class="form-group">
                                         <label for="exampleFormControlFile1">Chọn hình ảnh *</label>
                                         <br>
-                                        <input name="image" type="file" class="form-control-file" id="productImage">
+                                        <input name="image" type="file" class="form-control-file" id="productImage" required>
                                     </div>
                                     <div class="form-group">
                                       <label for="exampleInputEmail1">Tên (Việt Nam)*</label>
-                                      <input name="name_vn" type="text" class="form-control" id="productNameVN" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
+                                      <input required name="name_vn" type="text" class="form-control" id="productNameVN" aria-describedby="emailHelp" placeholder="VD: bộ sưu tập ...">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Tên(Tiếng Anh)*</label>

@@ -1,10 +1,15 @@
 $(document).ready(function(){
     let id = ''
+    ClassicEditor
+    .create( document.querySelector( '#content_vn' ) )
+    ClassicEditor
+    .create( document.querySelector( '#content_en' ) )
+    ClassicEditor
+    .create( document.querySelector( '#content_zh' ) )
     $('.dropdown-toggle').dropdown();
     $.get(`/router/category`,function(results){
         console.log(results)
         results.forEach(element => {
-            
             let item = $(`<button type="button" class="dropdown-item">${element.name.vn}</button>`).click(function(){
                 id = element._id
                 $('#dropdownMenuButton').html(`${element.name.vn}`)

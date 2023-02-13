@@ -3,6 +3,7 @@ mongooseIntl = require('mongoose-intl'),
 Schema       = mongoose.Schema;
 
 var schema = new Schema({
+    time_open: String,
     content: { type: String, intl: true },
 });
 

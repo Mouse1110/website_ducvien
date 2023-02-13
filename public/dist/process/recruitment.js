@@ -20,7 +20,7 @@ $(document).ready(function(){
                        font-size: 18px;
                        line-height: 40px;
                        text-decoration:none;
-                       color: #000;">${element.name}</a>
+                       color: #000;">${element.name.substring}</a>
                         <p class="card-text" style="font-style: normal;
                             font-weight: 500;
                             font-size: 14px;

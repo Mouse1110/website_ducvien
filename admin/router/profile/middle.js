@@ -18,6 +18,7 @@ module.exports.put_item = async (req,res) => {
                 en:req.body.content_en,
                 zh:req.body.content_zh,
             },
+            time_open:req.body.time_open
         })
         let result = await data.save()
         res.redirect('/about');
@@ -28,6 +29,7 @@ module.exports.put_item = async (req,res) => {
                 en:req.body.content_en,
                 zh:req.body.content_zh,
             },
+            time_open:req.body.time_open
         })
             var upsertData = data.toObject();
             delete upsertData._id;

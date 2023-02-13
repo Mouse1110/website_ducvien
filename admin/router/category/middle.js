@@ -2,17 +2,31 @@ const Model = require("../../../models/category")
 
 module.exports.get_item = async (req,res) => {
     let datas =await Model.find({})
-    let results = []
-    for (let i = datas.length -1 ;i>=0;i--){
-        results.push(datas[i])
+    for (let i = 0 ;i<datas.length -2;i++){
+        for (let j = i+1;j<datas.length -1;j++){
+            if (datas[i].index>datas[j].index){
+                let x = datas[i]
+                datas[i] = datas[j]
+                datas[j] = x
+            }
+        }
     }
-    res.json(results);
+    res.json(datas);
+}
+
+module.exports.sort_item = async (req,res) => {
+    if (!req.body.ids) return res.send();
+    console.log(req.body.ids)
+    for (let i =0;i<req.body.ids.length;i++){
+        await Model.updateOne({_id:req.body.ids[i]},{$set:{index:i}})
+    }
+    res.send();
 }
 
 module.exports.post_item = async (req,res) => {
     var file = req.file;
     console.log(file)
-    if (!file) return res.redirect('http://localhost:5002/');
+    if (!file) return res.redirect('/');
     let data = new Model({
         name:{
             vn:req.body.name_vn,
@@ -22,7 +36,7 @@ module.exports.post_item = async (req,res) => {
         image:file.filename,
     })
     let result = await data.save()
-    res.redirect('http://localhost:5002/');
+    res.redirect('/');
 }
 
 module.exports.put_item = async (req,res) => {
