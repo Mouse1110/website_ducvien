@@ -82,6 +82,7 @@ $(function() {
             
 
             $('#title_fabric').html(result.name_fabric)
+            $('#content').html(result.content)
         })
     }
     

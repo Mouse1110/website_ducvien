@@ -83,14 +83,16 @@ router.get("/product",async (req,res)=>{
        image_fabric:"/"+e.image_fabric,
        name_sample:e.get('name_sample.vn'),
        image_sample:"/"+e.image_sample,
-       id_fabric:e.id_fabric,})))
+       id_fabric:e.id_fabric,
+       content:e.get('content.vn'),})))
     } 
     res.json(results.map(e=>({_id:e._id,
         name_fabric:e.get('name_fabric.en'),
        image_fabric:"/"+e.image_fabric,
        name_sample:e.get('name_sample.en'),
        image_sample:"/"+e.image_sample,
-       id_fabric:e.id_fabric,})))
+       id_fabric:e.id_fabric,
+       content:e.get('content.en'),})))
 })
 
 
@@ -103,14 +105,16 @@ router.get("/product/:id",async (req,res)=>{
            image_fabric:"/"+e.image_fabric,
            name_sample:e.get('name_sample.vn'),
            image_sample:"/"+e.image_sample,
-           id_fabric:e.id_fabric,})
+           id_fabric:e.id_fabric,
+           content:e.get('content.vn'),})
      } 
      res.json({_id:e._id,
         name_fabric:e.get('name_fabric.en'),
        image_fabric:"/"+e.image_fabric,
        name_sample:e.get('name_sample.en'),
        image_sample:"/"+e.image_sample,
-       id_fabric:e.id_fabric,})
+       id_fabric:e.id_fabric,
+       content:e.get('content.en'),})
 })
 
 router.get("/profile",async (req,res)=>{
