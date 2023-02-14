@@ -54,8 +54,8 @@ router.get("/banner",async (req,res)=>{
 router.get("/category",async (req,res)=>{
     let datas =await CategoryModel.find({})
     let results = []
-    for (let i = 0 ;i<datas.length -2;i++){
-        for (let j = i+1;j<datas.length -1;j++){
+    for (let i = 0 ;i<datas.length -1;i++){
+        for (let j = i+1;j<datas.length;j++){
             if (datas[i].index>datas[j].index){
                 let x = datas[i]
                 datas[i] = datas[j]

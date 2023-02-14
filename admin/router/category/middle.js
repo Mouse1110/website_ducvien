@@ -2,8 +2,8 @@ const Model = require("../../../models/category")
 
 module.exports.get_item = async (req,res) => {
     let datas =await Model.find({})
-    for (let i = 0 ;i<datas.length -2;i++){
-        for (let j = i+1;j<datas.length -1;j++){
+    for (let i = 0 ;i<datas.length -1;i++){
+        for (let j = i+1;j<datas.length;j++){
             if (datas[i].index>datas[j].index){
                 let x = datas[i]
                 datas[i] = datas[j]
@@ -18,7 +18,9 @@ module.exports.sort_item = async (req,res) => {
     if (!req.body.ids) return res.send();
     console.log(req.body.ids)
     for (let i =0;i<req.body.ids.length;i++){
-        await Model.updateOne({_id:req.body.ids[i]},{$set:{index:i}})
+        
+      let result =  await Model.updateOne({_id:req.body.ids[i]},{$set:{index:i}})
+        console.log(result)
     }
     res.send();
 }
